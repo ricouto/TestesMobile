@@ -1,0 +1,129 @@
+[info] [Appium] Welcome to Appium v1.7.2
+[info] [Appium] Appium REST http interface listener started on 0.0.0.0:4723[info] [HTTP] --> GET /wd/hub/sessions {}
+[debug] [MJSONWP] Calling AppiumDriver.getSessions() with args: []
+[debug] [MJSONWP] Responding to client with driver.getSessions() result: []
+[info] [HTTP] <-- GET /wd/hub/sessions 200 10 ms - 29 [info] [HTTP] --> POST /wd/hub/session {"desiredCapabilities":{"appActivity":"com.android.calculator2.Calculator","appPackage":"com.android.calculator2","automationName":"uiautomator2","platformName":"Android","deviceName":"emulator-5554"},"capabilities":{"firstMatch":[{"appium:appActivity":"com.android.calculator2.Calculator","appium:appPackage":"com.android.calculator2","appium:automationName":"uiautomator2","appium:deviceName":"emulator-5554","platformName":"android"}]}}
+[debug] [MJSONWP] Calling AppiumDriver.createSession() with args: [{"appActivity":"com.android.calculator2.Calculator","appPackage":"com.android.calculator2","automationName":"uiautomator2","platformName":"Android","deviceName":"emulator-5554"},null,{"firstMatch":[{"appium:appActivity":"com.android.calculator2.Calculator","appium:appPackage":"com.android.calculator2","appium:automationName":"uiautomator2","appium:deviceName":"emulator-5554","platformName":"android"}]}]
+[debug] [BaseDriver] Event 'newSessionRequested' logged at 1652987575755 (16:12:55 GMT-0300 (Hora oficial do Brasil))
+[info] [Appium] Merged W3C capabilities {"firstMatch":[{"appium:appActivity":"com.andro... into desiredCapabilities object {"appActivity":"com.android.calculator2.Calcula...
+[info] [Appium] Creating new AndroidUiautomator2Driver (v0.11.0) session
+[info] [Appium] Capabilities:
+[info] [Appium]   appActivity: com.android.calculator2.Calculator
+[info] [Appium]   appPackage: com.android.calculator2
+[info] [Appium]   automationName: uiautomator2
+[info] [Appium]   platformName: android
+[info] [Appium]   deviceName: emulator-5554
+[info] [BaseDriver] Session created with session id: fdf89691-dc57-4971-9fd8-18ff1ec00529[debug] [AndroidDriver] Getting Java version[info] [AndroidDriver] Java version is: 1.8.0_333
+[info] [ADB] Checking whether adb is present
+[info] [AndroidDriver] Retrieving device list
+[debug] [ADB] Trying to find a connected android device
+[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[info] [AndroidDriver] Using device: emulator-5554
+[info] [ADB] Checking whether adb is present
+[debug] [ADB] Setting device id to emulator-5554
+[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","getprop","ro.build.version.sdk"]
+[debug] [ADB] Current device property 'ro.build.version.sdk': 24
+[debug] [ADB] Device API level: 24
+[warn] [AndroidDriver] No app sent in, not parsing package/activity
+[info] [ADB] Getting device platform version
+[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","getprop","ro.build.version.release"][debug] [ADB] Current device property 'ro.build.version.release': 7.0
+[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","wm","size"][debug] [ADB] Getting connected devices...
+[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","wm","density"][debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","getprop","ro.product.model"][debug] [ADB] Current device property 'ro.product.model': Android SDK built for x86
+[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","getprop","ro.product.manufacturer"][debug] [ADB] Current device property 'ro.product.manufacturer': Google
+[debug] [ADB] Getting connected devices...
+[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","am","force-stop","io.appium.uiautomator2.server"][info] [ADB] Checking whether aapt is present[debug] [ADB] Getting install status for io.appium.uiautomator2.server
+[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","pm","list","packages","io.appium.uiautomator2.server"][debug] [ADB] App is installed
+[debug] [ADB] Getting install status for io.appium.uiautomator2.server.test
+[debug] [ADB] Getting connected devices...
+[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","pm","list","packages","io.appium.uiautomator2.server.test"][debug] [ADB] App is installed
+[debug] [ADB] Getting package info for io.appium.uiautomator2.server
+[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","dumpsys","package","io.appium.uiautomator2.server"][debug] [UiAutomator2] Waiting up to 20000ms for instrumentation 'io.appium.uiautomator2.server.test/android.support.test.runner.AndroidJUnitRunner' to be available
+[debug] [ADB] Getting connected devices...
+[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","pm","list","instrumentation"][debug] [UiAutomator2] Instrumentation 'io.appium.uiautomator2.server.test/android.support.test.runner.AndroidJUnitRunner' available
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","wait-for-device"][debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","echo","ping"][warn] [AndroidDriver] setDeviceLanguageCountry requires language or country.
+[warn] [AndroidDriver] Got language: 'undefined' and country: 'undefined'
+[debug] [Logcat] Starting logcat capture[debug] [AndroidDriver] Pushing settings apk to device...
+[debug] [ADB] Getting install status for io.appium.settings
+[debug] [ADB] Getting connected devices...
+[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","pm","list","packages","io.appium.settings"][debug] [ADB] App is installed
+[debug] [ADB] Getting package info for io.appium.settings
+[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","dumpsys","package","io.appium.settings"][info] [ADB] Checking whether aapt is present[debug] [ADB] The installed 'io.appium.settings' package does not require upgrade (5 >= 5)
+[debug] [ADB] Device API level: 24
+[debug] [ADB] Getting connected devices...
+[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","dumpsys","package","io.appium.settings"][debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","pm","dump","io.appium.settings"][debug] [ADB] Got the following command chunks to execute: pm,grant,io.appium.settings,android.permission.WRITE_SETTINGS,;,pm,grant,io.appium.settings,android.permission.ACCESS_MOCK_LOCATION,;
+[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","pm","grant","io.appium.settings","android.permission.WRITE_SETTINGS",";","pm","grant","io.appium.settings","android.permission.ACCESS_MOCK_LOCATION",";"][debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","pm","grant","io.appium.settings","android.permission.WRITE_SETTINGS",";","pm","grant","io.appium.settings","android.permission.ACCESS_MOCK_LOCATION",";"][debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","ps"][debug] [ADB] Device API level: 24
+[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","appops","set","io.appium.settings","android:mock_location","allow"][debug] [AndroidDriver] Pushing unlock helper app to device...
+[debug] [ADB] Getting install status for io.appium.unlock
+[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","pm","list","packages","io.appium.unlock"][debug] [ADB] App is installed
+[debug] [ADB] Getting package info for io.appium.unlock
+[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","dumpsys","package","io.appium.unlock"][info] [ADB] Checking whether aapt is present[debug] [ADB] The installed 'io.appium.unlock' package does not require upgrade (2 >= 2)
+[debug] [UiAutomator2] Forwarding UiAutomator2 Server port 6790 to 8200
+[debug] [ADB] Forwarding system: 8200 to device: 6790
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","forward","tcp:8200","tcp:6790"][debug] [ADB] Getting connected devices...
+[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","dumpsys","window"][info] [AndroidDriver] Screen already unlocked, doing nothing
+[debug] [AndroidDriver] Extracting strings from apk undefined undefined C:\Users\roeu\AppData\Local\Temp\com.android.calculator2
+[debug] [ADB] Extracting strings for language: default
+[debug] [ADB] Device API level: 24
+[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","getprop","persist.sys.locale"][debug] [ADB] Current device property 'persist.sys.locale': 
+[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","getprop","ro.product.locale"][debug] [ADB] Current device property 'ro.product.locale': en-US[debug] [ADB] No strings.xml for language 'en', getting default strings.xml[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","rm","-rf","/data/local/tmp/strings.json"][debug] [UiAutomator2] No app capability. Assuming it is already on the device
+[debug] [AndroidDriver] Running fast reset (stop and clear)
+[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","am","force-stop","com.android.calculator2"][debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","pm","clear","com.android.calculator2"][debug] [ADB] Checking app cert for undefined
+[debug] [ADB] 'undefined' doesn't exist
+[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","am","force-stop","io.appium.uiautomator2.server"][info] [UiAutomator2] Starting uiautomator2 server v0.3.0
+[info] [UiAutomator2] Running command: 'adb -s emulator-5554 shell am instrument -w io.appium.uiautomator2.server.test/android.support.test.runner.AndroidJUnitRunner'
+[info] [UiAutomator2] Waiting up to 20000ms for UiAutomator2 to be online...
+[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [UiAutomator2] [UIAutomator2] java.lang.SecurityException: Permission Denial: starting instrumentation ComponentInfo{io.appium.uiautomator2.server.test/android.support.test.runner.AndroidJUnitRunner} from pid=6545, uid=6545 not allowed because package io.appium.uiautomator2.server.test does not have a signature matching the target io.appium.uiautomator2.server
+[debug] [UiAutomator2] [UIAutomator2] INSTRUMENTATION_STATUS: id=ActivityManagerService
+[debug] [UiAutomator2] [UIAutomator2] INSTRUMENTATION_STATUS: Error=Permission Denial: starting instrumentation ComponentInfo{io.appium.uiautomator2.server.test/android.support.test.runner.AndroidJUnitRunner} from pid=6545, uid=6545 not allowed because package io.appium.uiautomator2.server.test does not have a signature matching the target io.appium.uiautomator2.server
+[debug] [UiAutomator2] [UIAutomator2] INSTRUMENTATION_STATUS_CODE: -1
+[debug] [UiAutomator2] [UIAutomator2] 	at android.os.Parcel.readException(Parcel.java:1683)
+[debug] [UiAutomator2] [UIAutomator2] 	at android.os.Parcel.readException(Parcel.java:1636)
+[debug] [UiAutomator2] [UIAutomator2] 	at android.app.ActivityManagerProxy.startInstrumentation(ActivityManagerNative.java:4516)
+[debug] [UiAutomator2] [UIAutomator2] 	at com.android.commands.am.Am.runInstrument(Am.java:889)
+[debug] [UiAutomator2] [UIAutomator2] 	at com.android.commands.am.Am.onRun(Am.java:400)
+[debug] [UiAutomator2] [UIAutomator2] 	at com.android.internal.os.BaseCommand.run(BaseCommand.java:51)
+[debug] [UiAutomator2] [UIAutomator2] 	at com.android.commands.am.Am.main(Am.java:121)
+[debug] [UiAutomator2] [UIAutomator2] 	at com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)
+[debug] [UiAutomator2] [UIAutomator2] 	at com.android.internal.os.RuntimeInit.main(RuntimeInit.java:262)[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body[debug] [JSONWP Proxy] Proxying [GET /status] to [GET http://localhost:8200/wd/hub/status] with no body
+[debug] [UiAutomator2] Deleting UiAutomator2 session
+[debug] [UiAutomator2] Deleting UiAutomator2 server session
+[warn] [UiAutomator2] Did not get confirmation UiAutomator2 deleteSession worked; Error was: Error: Trying to proxy a session command without session id
+[debug] [ADB] Getting connected devices...[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","shell","am","force-stop","com.android.calculator2"][debug] [Logcat] Stopping logcat capture
+[debug] [ADB] Removing forwarded port socket connection: 8200 
+[debug] [ADB] Running 'C:\Users\roeu\AppData\Local\Android\Sdk\platform-tools\adb.exe' with args: ["-P",5037,"-s","emulator-5554","forward","--remove","tcp:8200"][error] [MJSONWP] Encountered internal error running command: ProxyRequestError: Could not proxy command to remote server. Original error: Error: socket hang up
+    at JWProxy.proxy$ (C:\Users\roeu\AppData\Local\Programs\appium-desktop\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\jsonwp-proxy\proxy.js:152:13)
+    at tryCatch (C:\Users\roeu\AppData\Local\Programs\appium-desktop\resources\app\node_modules\appium\node_modules\babel-runtime\regenerator\runtime.js:67:40)
+    at GeneratorFunctionPrototype.invoke [as _invoke] (C:\Users\roeu\AppData\Local\Programs\appium-desktop\resources\app\node_modules\appium\node_modules\babel-runtime\regenerator\runtime.js:315:22)
+    at GeneratorFunctionPrototype.prototype.(anonymous function) [as throw] (C:\Users\roeu\AppData\Local\Programs\appium-desktop\resources\app\node_modules\appium\node_modules\babel-runtime\regenerator\runtime.js:100:21)
+    at GeneratorFunctionPrototype.invoke (C:\Users\roeu\AppData\Local\Programs\appium-desktop\resources\app\node_modules\appium\node_modules\babel-runtime\regenerator\runtime.js:136:37)
+    at <anonymous>
+[info] [HTTP] <-- POST /wd/hub/session 500 41373 ms - 216 

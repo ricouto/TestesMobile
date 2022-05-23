@@ -10,7 +10,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class CalculadoraTest {
+public class CalculadoraMoto7PlayTest {
 	
 	@Test
 	public void deveSomarDoisValores() throws MalformedURLException {
@@ -19,25 +19,24 @@ public class CalculadoraTest {
 		desiredCapabilities.setCapability("platformName", "Android");
 		desiredCapabilities.setCapability("deviceName", "emulator-5554");
 		desiredCapabilities.setCapability("automationName", "uiautomator2");
-		desiredCapabilities.setCapability("appPackage", "com.android.calculator2");
+		desiredCapabilities.setCapability("appPackage", "com.google.android.calculator");
 		desiredCapabilities.setCapability("appActivity", "com.android.calculator2.Calculator");
         
 		AndroidDriver<MobileElement> driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), desiredCapabilities);
 		
-		MobileElement el8 = (MobileElement) driver.findElementById("com.android.calculator2:id/digit_2");
-	    el8.click();
-	    MobileElement el9 = (MobileElement) driver.findElementByAccessibilityId("plus");
-	    el9.click();
-	    MobileElement el10 = (MobileElement) driver.findElementById("com.android.calculator2:id/digit_2");
-	    el10.click();
-	    MobileElement el11 = (MobileElement) driver.findElementByAccessibilityId("equals");
-	    el11.click();
-	    MobileElement el12 = (MobileElement) driver.findElementById("com.android.calculator2:id/result");
+		MobileElement el11 = (MobileElement) driver.findElementById("com.google.android.calculator:id/digit_2");
+		el11.click();
+	    MobileElement el2 = (MobileElement) driver.findElementByAccessibilityId("plus");
+	    el2.click();
+	    MobileElement el3 = (MobileElement) driver.findElementById("com.google.android.calculator:id/digit_2");
+	    el3.click();
+	    MobileElement el4 = (MobileElement) driver.findElementByAccessibilityId("equals");
+	    el4.click();
+	    MobileElement el5 = (MobileElement) driver.findElementById("com.google.android.calculator:id/result_final");
 	    
-	    //System.out.println(el12.getText());
-	    Assert.assertEquals("4", el12.getText());
+	    //System.out.println(el5.getText());
+	    Assert.assertEquals("4", el5.getText());
 	    
 	    driver.quit();
 	}
-
 }
