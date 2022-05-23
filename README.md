@@ -4,7 +4,7 @@ Repo que contém material sobre o curso de Testes Mobile realizado na Udemy para
 
 ## :briefcase: Documentação
 
-[:construction:]
+[:construction:] Colocarei mais detalhes ao longo do curso \0/
 
 ## <code><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f393.png" width="20"></code><code><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4da.png" width="20"></code> Cursos
 
