@@ -19,7 +19,6 @@ public class ElementosCTAppiumTeste {
 	
 	@Test
 	public void devePreencherCampoTexto() throws MalformedURLException {
-		
 		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 		desiredCapabilities.setCapability("platformName", "Android");
 		desiredCapabilities.setCapability("deviceName", "emulator-5554");
@@ -50,4 +49,67 @@ public class ElementosCTAppiumTeste {
 	    driver.quit();
 	}
 
+	@Test
+	public void deveIntegarirCombo() throws MalformedURLException {
+		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+		desiredCapabilities.setCapability("platformName", "Android");
+		desiredCapabilities.setCapability("deviceName", "emulator-5554");
+		desiredCapabilities.setCapability("automationName", "uiautomator2");
+		desiredCapabilities.setCapability(MobileCapabilityType.APP, "C:\\Git_Automacao\\CursoAppium\\evidencias\\appTreinamento\\CTAppium_2_0.apk");
+        
+		AndroidDriver<MobileElement> driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), desiredCapabilities);
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		//passos
+		//entrar no Formulario XPath
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Formulário']")).click();
+		
+		//clicar no combo
+		driver.findElement(MobileBy.AccessibilityId("console")).click();
+		
+		//selecionar a opcao
+		driver.findElement(By.xpath("//android.widget.CheckedTextView[@text='Nintendo Switch']")).click();
+		
+		//verificar a opcao
+		String textCombo = driver.findElement(By.xpath("//android.widget.Spinner/android.widget.TextView")).getText();
+		System.out.println(textCombo);
+		Assert.assertEquals("Nintendo Switch", textCombo);
+		
+	    driver.quit();
+	}
+	
+	@Test
+	public void deveIntegarirSwitchCheckBox() throws MalformedURLException {
+		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+		desiredCapabilities.setCapability("platformName", "Android");
+		desiredCapabilities.setCapability("deviceName", "emulator-5554");
+		desiredCapabilities.setCapability("automationName", "uiautomator2");
+		desiredCapabilities.setCapability(MobileCapabilityType.APP, "C:\\Git_Automacao\\CursoAppium\\evidencias\\appTreinamento\\CTAppium_2_0.apk");
+        
+		AndroidDriver<MobileElement> driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), desiredCapabilities);
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		//passos
+		//entrar no Formulario XPath
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Formulário']")).click();
+		
+		//verificar o status do elemento
+		MobileElement elCheck = driver.findElement(By.className("android.widget.CheckBox"));
+		MobileElement elSwitch = driver.findElement(MobileBy.AccessibilityId("switch"));
+		
+		Assert.assertTrue(elCheck.getAttribute("checked").equals("false"));
+		Assert.assertTrue(elSwitch.getAttribute("checked").equals("true"));
+		
+		//clicar nos elementos
+		elCheck.click();
+		elSwitch.click();
+		
+		//verificar estados alterados
+		Assert.assertFalse(elCheck.getAttribute("checked").equals("false")); //poderia mudar somente de false -> true
+		Assert.assertFalse(elSwitch.getAttribute("checked").equals("true")); //poderia mudar somente de true -> false
+		
+	    driver.quit();
+	}
 }
