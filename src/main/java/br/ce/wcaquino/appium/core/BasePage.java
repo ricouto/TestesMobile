@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 
 import io.appium.java_client.MobileElement;
 
-public class DSL {
+public class BasePage {
 
 	public void escrever(By by, String texto) {
 		getDriver().findElement(by).sendKeys(texto);

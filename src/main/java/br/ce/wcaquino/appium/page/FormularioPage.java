@@ -4,59 +4,57 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 
-import br.ce.wcaquino.appium.core.DSL;
+import br.ce.wcaquino.appium.core.BasePage;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 
-public class FormularioPage {
+public class FormularioPage extends BasePage {
 
-	private DSL dsl = new DSL();
-	
 	public void escreverNome(String nome) {
-		dsl.escrever(MobileBy.AccessibilityId("nome"), nome);
+		escrever(MobileBy.AccessibilityId("nome"), nome);
 	}
 	
 	public String obterNome() {
-		return dsl.obterTexto(MobileBy.AccessibilityId("nome"));
+		return obterTexto(MobileBy.AccessibilityId("nome"));
 	}
 	
 	public void clicarCombo() {
-		dsl.clicar(By.className("android.widget.Spinner"));
+		clicar(By.className("android.widget.Spinner"));
 	}
 	
 	public void selecionarCombo(String valor) {
-		dsl.selecionarCombo(MobileBy.AccessibilityId("console"), valor);
+		selecionarCombo(MobileBy.AccessibilityId("console"), valor);
 	}
 	
 	public String obterValorCombo() {
-		return dsl.obterTexto(By.xpath("//android.widget.Spinner/android.widget.TextView"));
+		return obterTexto(By.xpath("//android.widget.Spinner/android.widget.TextView"));
 	}
 	
 	public void clicarOpcaoCombo(String opcCombo) {
-		dsl.clicar(By.xpath("//android.widget.CheckedTextView[@text='"+ opcCombo +"']"));
+		clicar(By.xpath("//android.widget.CheckedTextView[@text='"+ opcCombo +"']"));
 	}
 	
 	public void clicarCheck() {
-		dsl.clicar(By.className("android.widget.CheckBox"));
+		clicar(By.className("android.widget.CheckBox"));
 	}
 	
 	public void clicarSwitch() {
-		dsl.clicar(MobileBy.AccessibilityId("switch"));
+		clicar(MobileBy.AccessibilityId("switch"));
 	}
 	
 	public boolean isCheckMarcado() {
-		return dsl.isCheckMarcado(By.className("android.widget.CheckBox"));
+		return isCheckMarcado(By.className("android.widget.CheckBox"));
 	}
 	
 	public boolean isSwitchMarcado() {
-		return dsl.isCheckMarcado(MobileBy.AccessibilityId("switch"));
+		return isCheckMarcado(MobileBy.AccessibilityId("switch"));
 	} 
 	
 	public void clicarSalvar() {
-		dsl.clicar(MobileBy.AccessibilityId("save"));
+		clicar(MobileBy.AccessibilityId("save"));
 	}
 	
 	public List<MobileElement> obterValoresLista() {
-		return dsl.obterLista(By.xpath("//android.widget.TextView[@text]"));
+		return obterLista(By.xpath("//android.widget.TextView[@text]"));
 	}
 }

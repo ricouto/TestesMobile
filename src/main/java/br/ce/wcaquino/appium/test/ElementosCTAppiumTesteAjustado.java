@@ -4,17 +4,16 @@ import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.ce.wcaquino.appium.core.DriverFactory;
+import br.ce.wcaquino.appium.core.BaseTest;
 import br.ce.wcaquino.appium.page.FormularioPage;
 import br.ce.wcaquino.appium.page.MenuPage;
 import io.appium.java_client.MobileElement;
 
-public class ElementosCTAppiumTesteAjustado {
+public class ElementosCTAppiumTesteAjustado extends BaseTest {
 	
 	private MenuPage menu = new MenuPage();
 	private FormularioPage formulario = new FormularioPage();
@@ -22,11 +21,6 @@ public class ElementosCTAppiumTesteAjustado {
 	@Before
 	public void inicializarAppium() throws MalformedURLException {
 		menu.acessarFormulario();
-	}
-	
-	@After
-	public void tearDown() {
-		DriverFactory.killDriver();
 	}
 	
 	@Test

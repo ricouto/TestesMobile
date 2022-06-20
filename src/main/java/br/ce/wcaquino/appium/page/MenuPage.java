@@ -1,12 +1,10 @@
 package br.ce.wcaquino.appium.page;
 
-import br.ce.wcaquino.appium.core.DSL;
+import br.ce.wcaquino.appium.core.BasePage;
 
-public class MenuPage {
+public class MenuPage extends BasePage {
 	
-	private DSL dsl = new DSL();
-
 	public void acessarFormulario() {
-		dsl.clicarPorTexto("Formulário");
+		clicarPorTexto("Formulário");
 	}
 }
