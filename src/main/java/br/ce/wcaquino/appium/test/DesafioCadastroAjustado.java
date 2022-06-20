@@ -1,4 +1,4 @@
-package br.ce.wcaquino.appium;
+package br.ce.wcaquino.appium.test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -11,9 +11,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.MobileBy;
@@ -21,13 +19,14 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class DesafioCadastroAula18 {
+public class DesafioCadastroAjustado {
 
-	public WebDriver driver;
 	public WebDriverWait wait;
-
+	
+	public AndroidDriver<MobileElement> driver;
+	
 	@Before
-	public void setUp() throws Exception {
+	public void inicializarAppium() throws MalformedURLException {
 		// 1 - DesiredCapabilities
 		DesiredCapabilities dsCapabilities = new DesiredCapabilities();
 		dsCapabilities.setCapability("platformName", "Android");
@@ -35,30 +34,28 @@ public class DesafioCadastroAula18 {
 		dsCapabilities.setCapability("automationName", "uiautomator2");
 		dsCapabilities.setCapability(MobileCapabilityType.APP,System.getProperty("user.dir") + "\\evidencias\\appTreinamento\\CTAppium_2_0.apk");
 
-		driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), dsCapabilities);
+		driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),dsCapabilities);
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		wait = new WebDriverWait(driver, 10);
+		
+		// 2.1 - Clicar na opção "Formulário"
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Formulário']")).click();
 	}
-
+	
 	@After
-	public void tearDown() throws Exception {
-		// Finalizar o driver
+	public void tearDown() {
+		//Finalizar o driver
 		driver.quit();
 	}
 
 	@Test
-	public void preencherCadastroDesafioAula18() throws MalformedURLException, InterruptedException {
+	public void preencherCadastroDesafioAula18Ajustado() throws MalformedURLException, InterruptedException {
 
 		String[] elementosValidacaoCTAppium = { "Nome", "Console", "Switch", "Checkbox" };
 		String[] massaValidacaoCTAppium = { "Video Game!", "ps4", "Off", "Marcado" };
 		ArrayList<String> validarDadosForm = new ArrayList<String>();
 
 		// 2 - Acessando as opções do APP CTAppium
-
-		// 2.1 - Clicar na opção "Formulário"
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Formulário']")).click();
-
 		// 2.2 - Preenchendo o "Formulário"
 		driver.findElement(MobileBy.AccessibilityId("nome")).sendKeys("Video Game!");
 
@@ -83,11 +80,10 @@ public class DesafioCadastroAula18 {
 		driver.findElement(MobileBy.AccessibilityId("save")).click();
 
 		// 5 - Validar dos dados após Salvar
-		// Thread.sleep(1000);// melhorar este ponto aqui com until
-		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//android.widget.TextView[@text]")));
+		Thread.sleep(2000);// melhorar este ponto aqui com until
+		//wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//android.widget.TextView[@text]")));
 
-		List<MobileElement> elementosRetornadosFormAPK = driver
-				.findElements(By.xpath("//android.widget.TextView[@text]"));
+		List<MobileElement> elementosRetornadosFormAPK = driver.findElements(By.xpath("//android.widget.TextView[@text]"));
 
 		// System.out.println("Qtd Elementos: "+ elementosRetornadosFormAPK.size());
 

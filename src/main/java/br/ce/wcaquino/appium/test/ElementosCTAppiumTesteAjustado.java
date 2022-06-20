@@ -1,4 +1,4 @@
-package br.ce.wcaquino.appium;
+package br.ce.wcaquino.appium.test;
 
 import java.net.MalformedURLException;
 import java.util.ArrayList;
@@ -8,22 +8,20 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 
-import br.ce.wcaquino.appium.core.DSL;
 import br.ce.wcaquino.appium.core.DriverFactory;
-import io.appium.java_client.MobileBy;
+import br.ce.wcaquino.appium.page.FormularioPage;
+import br.ce.wcaquino.appium.page.MenuPage;
 import io.appium.java_client.MobileElement;
 
 public class ElementosCTAppiumTesteAjustado {
 	
-	private DSL dsl = new DSL(); 
+	private MenuPage menu = new MenuPage();
+	private FormularioPage formulario = new FormularioPage();
 	
 	@Before
 	public void inicializarAppium() throws MalformedURLException {
-		// entrar no Formulario XPath
-		dsl.clicarPorTexto("Formulário");
-		//dsl.clicar(By.xpath("//android.widget.TextView[@text='Formulário']"));
+		menu.acessarFormulario();
 	}
 	
 	@After
@@ -33,40 +31,26 @@ public class ElementosCTAppiumTesteAjustado {
 	
 	@Test
 	public void devePreencherCampoTexto() throws MalformedURLException {
-		//passos
-		//escrever "nome" 
-		dsl.escrever(MobileBy.AccessibilityId("nome"), "Ricardo Couto");
-		
-		//verificar o nome inputado
-		Assert.assertEquals("Ricardo Couto", dsl.obterTexto(MobileBy.AccessibilityId("nome")));
+		formulario.escreverNome("Ricardo Couto");
+		Assert.assertEquals("Ricardo Couto", formulario.obterNome());
 	}
 
 	@Test
 	public void deveIntegarirCombo() throws MalformedURLException {
-		//passos
-		//clicar no combo
-		dsl.selecionarCombo(MobileBy.AccessibilityId("console"), "Nintendo Switch");
-		
-		//selecionar e verificar a opcao
-		String textCombo = dsl.obterTexto(By.xpath("//android.widget.Spinner/android.widget.TextView"));
-		//System.out.println(textCombo);
-		Assert.assertEquals("Nintendo Switch", textCombo);
+		formulario.selecionarCombo("Nintendo Switch");
+		Assert.assertEquals("Nintendo Switch", formulario.obterValorCombo());
 	}
 	
 	@Test
 	public void deveIntegarirSwitchCheckBox() throws MalformedURLException {
-		//passos
-		//verificar o status do elemento
-		Assert.assertFalse(dsl.isCheckMarcado(By.className("android.widget.CheckBox")));
-		Assert.assertTrue(dsl.isCheckMarcado(MobileBy.AccessibilityId("switch")));
+		Assert.assertFalse(formulario.isCheckMarcado());
+		Assert.assertTrue(formulario.isSwitchMarcado());
 		
-		//clicar nos elementos
-		dsl.clicar(By.className("android.widget.CheckBox"));
-		dsl.clicar(MobileBy.AccessibilityId("switch"));
-		
-		//verificar estados alterados
-		Assert.assertTrue(dsl.isCheckMarcado(By.className("android.widget.CheckBox")));
-		Assert.assertFalse(dsl.isCheckMarcado(MobileBy.AccessibilityId("switch")));
+		formulario.clicarCheck();
+		formulario.clicarSwitch();
+
+		Assert.assertTrue(formulario.isCheckMarcado());
+		Assert.assertFalse(formulario.isSwitchMarcado());
 	}
 	
 	@Test
@@ -78,33 +62,31 @@ public class ElementosCTAppiumTesteAjustado {
 
 		// 2 - Acessando as opções do APP CTAppium
 		// 2.2 - Preenchendo o "Formulário"
-		dsl.escrever(MobileBy.AccessibilityId("nome"), "Video Game!");
+		formulario.escreverNome("Video Game!");
 
-		dsl.clicar(By.className("android.widget.Spinner"));
+		formulario.clicarCombo();
+		formulario.clicarOpcaoCombo("PS4");
 		
-		dsl.clicar(By.xpath("//android.widget.CheckedTextView[@text='PS4']"));
-		
-		Assert.assertFalse(dsl.isCheckMarcado(MobileBy.AccessibilityId("check")));
-		Assert.assertTrue(dsl.isCheckMarcado(MobileBy.AccessibilityId("switch")));
+		Assert.assertFalse(formulario.isCheckMarcado());
+		Assert.assertTrue(formulario.isSwitchMarcado());
 
-		dsl.clicar(MobileBy.AccessibilityId("check"));
-		dsl.clicar(MobileBy.AccessibilityId("switch"));
+		formulario.clicarCheck();
+		formulario.clicarSwitch();
 
-		// 3 - Verificando os campos
-		Assert.assertEquals(dsl.obterTexto(MobileBy.AccessibilityId("nome")), "Video Game!");
-		Assert.assertEquals(dsl.obterTexto(By.xpath("//android.widget.Spinner/android.widget.TextView")),"PS4");
+		Assert.assertEquals(formulario.obterNome(), "Video Game!");
+		Assert.assertEquals(formulario.obterValorCombo(),"PS4");
 		
-		Assert.assertTrue(dsl.isCheckMarcado(MobileBy.AccessibilityId("check")));
-		Assert.assertFalse(dsl.isCheckMarcado(MobileBy.AccessibilityId("switch")));
+		Assert.assertTrue(formulario.isCheckMarcado());
+		Assert.assertFalse(formulario.isSwitchMarcado());
 
 		// 4 - Clicando no Salvar
-		dsl.clicar(MobileBy.AccessibilityId("save"));
+		formulario.clicarSalvar();
 
 		// 5 - Validar dos dados após Salvar
 		Thread.sleep(2000);// melhorar este ponto aqui com until
 		//wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//android.widget.TextView[@text]")));
 
-		List<MobileElement> elementosRetornadosFormAPK = dsl.obterLista(By.xpath("//android.widget.TextView[@text]"));
+		List<MobileElement> elementosRetornadosFormAPK = formulario.obterValoresLista();
 
 		// System.out.println("Qtd Elementos: "+ elementosRetornadosFormAPK.size());
 
