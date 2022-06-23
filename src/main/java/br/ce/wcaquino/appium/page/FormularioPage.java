@@ -54,6 +54,14 @@ public class FormularioPage extends BasePage {
 		clicar(MobileBy.AccessibilityId("save"));
 	}
 	
+	public void clicarSalvarDemorado() {
+		clicar(By.xpath("//android.widget.Button/android.widget.TextView[@text='SALVAR DEMORADO']")); //android.widget.Button[@text='SALVAR DEMORADO']"
+	}
+	
+	public By elementosSalvo() {
+		return (By.xpath("//android.widget.TextView[@text]"));
+	}
+	
 	public List<MobileElement> obterValoresLista() {
 		return obterLista(By.xpath("//android.widget.TextView[@text]"));
 	}

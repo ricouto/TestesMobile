@@ -40,4 +40,9 @@ public class BasePage {
 	public boolean isCheckMarcado(By by) {
 		return getDriver().findElement(by).getAttribute("checked").equals("true");
 	}
+	
+	public boolean existeElementoPorTexto(String texto) {
+		List<MobileElement> elementos = getDriver().findElements(By.xpath("//*[@text='"+texto+"']"));
+		return elementos.size() > 0;
+	}
 }

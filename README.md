@@ -1,10 +1,15 @@
 # :artificial_satellite: Curso de Testes Mobile
 
-Repo que contém material sobre o curso de Testes Mobile realizado na Udemy para conhecimento e aprender, na prática, como são realizados estes testes.
+Repo que contém material sobre o curso de Testes Mobile (Java e Appium) realizado na Udemy para conhecimento e aprender, na prática, como são realizados estes testes.
 
 ## :briefcase: Documentação
 
-[:construction:] Colocarei mais detalhes ao longo do curso \0/
+<p> [:heavy_check_mark:] AlertTest.java </p>
+<p> [:heavy_check_mark:] CalculadoraTest.java </p>
+<p> [:heavy_check_mark:] DesafioCadastroAula18.java </p>
+<p> [:heavy_check_mark:] ElementosCTAppiumTesteAjustado.java </p>
+
+<p> [:construction:] Colocarei mais detalhes ao longo do curso \0/  </p>
 
 ## <code><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f393.png" width="20"></code><code><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4da.png" width="20"></code> Cursos
 
