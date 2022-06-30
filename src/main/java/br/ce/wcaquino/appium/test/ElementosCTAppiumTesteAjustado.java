@@ -16,6 +16,7 @@ import br.ce.wcaquino.appium.core.BaseTest;
 import br.ce.wcaquino.appium.core.DriverFactory;
 import br.ce.wcaquino.appium.page.FormularioPage;
 import br.ce.wcaquino.appium.page.MenuPage;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 
 public class ElementosCTAppiumTesteAjustado extends BaseTest {
@@ -51,6 +52,25 @@ public class ElementosCTAppiumTesteAjustado extends BaseTest {
 
 		Assert.assertTrue(formulario.isCheckMarcado());
 		Assert.assertFalse(formulario.isSwitchMarcado());
+	}
+	
+	@Test
+	public void deveAlterarData() throws InterruptedException {
+		formulario.clicarPorTexto("01/01/2000");
+		Thread.sleep(1000);
+		formulario.clicarPorTexto("20");
+		formulario.clicarPorTexto("OK");
+		Assert.assertTrue(formulario.existeElementoPorTexto("20/01/2000"));
+	}
+	
+	@Test
+	public void deveAlterarHora() throws InterruptedException {
+		formulario.clicarPorTexto("12:00");
+		Thread.sleep(1000);
+		formulario.clicar(MobileBy.AccessibilityId("8"));
+		formulario.clicar(MobileBy.AccessibilityId("40"));
+		formulario.clicarPorTexto("OK");
+		Assert.assertTrue(formulario.existeElementoPorTexto("08:40"));
 	}
 	
 	@Test

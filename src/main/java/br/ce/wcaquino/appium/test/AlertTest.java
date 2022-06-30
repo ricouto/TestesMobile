@@ -27,7 +27,5 @@ public class AlertTest extends BaseTest {
 		Assert.assertEquals("Confirmado", alerta.obterMensagem());
 		
 		alerta.sair();
-		
 	}
-
 }
