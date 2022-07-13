@@ -7,6 +7,8 @@ import java.util.List;
 import org.openqa.selenium.By;
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.offset.PointOption;
 
 public class BasePage {
 
@@ -45,4 +47,15 @@ public class BasePage {
 		List<MobileElement> elementos = getDriver().findElements(By.xpath("//*[@text='"+texto+"']"));
 		return elementos.size() > 0;
 	}
+	
+	@SuppressWarnings("rawtypes")
+	public void tap(int startx, int starty) {
+		TouchAction touchAction = new TouchAction(getDriver());
+		
+		touchAction.tap(PointOption.point(startx, starty)).perform();
+		System.out.println("clicado na tap em : " +  startx +" "+ starty);
+
+		//touchAction.press(PointOption.point(startx, starty)).perform();
+	}
+
 }
