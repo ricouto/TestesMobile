@@ -35,9 +35,9 @@ public class AlertTest extends BaseTest {
 	
 	@Test
 	public void deveClicarForaDoAlerta() throws InterruptedException {
-		Thread.sleep(500);
-		alerta.clicarAlertaSimples();
 		//Thread.sleep(500);
+		alerta.clicarAlertaSimples();
+		Thread.sleep(1000);
 		alerta.clicarForaCaixa();
 		//Thread.sleep(5000);
 		System.out.println(menu.existeElementoPorTexto("Pode clicar no OK ou fora da caixa para sair"));

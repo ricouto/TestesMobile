@@ -10,9 +10,8 @@ public class BaseTest {
 		DriverFactory.killDriver();		
 	}
 	
-	/*
 	@After
 	public void tearDown() {
 		DriverFactory.getDriver().resetApp();
-	}*/
+	}
 }
