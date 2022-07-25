@@ -55,9 +55,9 @@ public class BasePage {
 		//TouchAction touchAction = new TouchAction(getDriver());
 
 		System.out.println("clicado na tap em : " + startx + " " + starty);
-		//touchAction.tap(PointOption.point(startx, starty)).release().perform();
+		//touchAction.tap(PointOption.point(startx, starty)).release().perform(); //com TAP
 
-		touchAction.press(PointOption.point(startx, starty)).perform(); // OK funcionou
+		touchAction.press(PointOption.point(startx, starty)).perform(); // com Press -> OK funcionou
 
 		// touchAction.press(PointOption.point(startx, starty)).release().perform();
 		// //NÃO funcionou!
