@@ -74,6 +74,13 @@ public class ElementosCTAppiumTesteAjustado extends BaseTest {
 	}
 	
 	@Test
+	public void deveIntegarirComSeekBar() {
+		formulario.clicarSeekBar(0.25); //OK 98
+		formulario.clicarSalvar();
+		
+	}
+	
+	@Test
 	public void preencherCadastro() throws MalformedURLException, InterruptedException {
 
 		String[] elementosValidacaoCTAppium = { "Nome", "Console", "Switch", "Checkbox" };

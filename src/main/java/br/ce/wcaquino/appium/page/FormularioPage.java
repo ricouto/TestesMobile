@@ -1,5 +1,7 @@
 package br.ce.wcaquino.appium.page;
 
+import static br.ce.wcaquino.appium.core.DriverFactory.getDriver;
+
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -52,6 +54,25 @@ public class FormularioPage extends BasePage {
 	
 	public void clicarSalvar() {
 		clicar(MobileBy.AccessibilityId("save"));
+	}
+	
+	public void clicarSeekBar(double posicao) {
+		int delta = 3;
+		MobileElement seek = getDriver().findElement(MobileBy.AccessibilityId("slid"));
+		int y = seek.getLocation().y + (seek.getSize().height / 2);
+		System.out.println(y);
+		
+		int xInicial = seek.getLocation().x + delta;
+		//System.out.println("xInicial " + xInicial);
+		//System.out.println(3 * delta);
+		
+		int x = (int) (xInicial + ((seek.getSize().width - 2 * delta ) * (posicao ) ));
+		
+		//System.out.println((seek.getSize().width - 3 * delta ) * posicao);
+		
+		//int x = (int) (xInicial + (seek.getSize().width * posicao));
+		System.out.println(x);
+		tap(x, y);
 	}
 	
 	public void clicarSalvarDemorado() {

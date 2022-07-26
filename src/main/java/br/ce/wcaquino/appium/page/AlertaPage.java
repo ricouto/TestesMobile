@@ -13,12 +13,6 @@ public class AlertaPage extends BasePage {
 		System.out.println("cliquei AlertaSimples.....");
 		clicarPorTexto("ALERTA SIMPLES");
 	}
-	public String obterTitulo() {
-		return obterTexto(By.id("android:id/alertTitle"));
-	}
-	public String obterMensagem() {
-		return obterTexto(By.id("android:id/message"));
-	}
 	public void confirmar() {
 		clicarPorTexto("CONFIRMAR");
 	}
