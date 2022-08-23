@@ -2,9 +2,10 @@ package br.ce.wcaquino.appium.core;
 
 import static br.ce.wcaquino.appium.core.DriverFactory.getDriver;
 
-import java.time.Duration;
+//import java.time.Duration;
 import java.util.List;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 
@@ -30,6 +31,17 @@ public class BasePage {
 	public String obterMensagem() {
 		return obterTexto(By.id("android:id/message"));
 	}
+	
+	public String clicarOpcaoPorXPath(String opc, String texto) {
+		//clicar(By.xpath("//*//android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView/*[@text='" + texto + "']"));
+		
+		//clicar(By.xpath("//*[@text='" + opc + "']//../../..//android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView//*[@text='" + texto + "']"));
+		
+		return obterTexto(By.xpath("//*[@text='" + opc + "']/../../..//android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView//*[@text=" + texto + "]"));
+		
+		//../../..//android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView//*[@text='" + texto + "']"
+		
+	}
 
 	public List<MobileElement> obterLista(By by) {
 		return getDriver().findElements(by);
@@ -41,10 +53,10 @@ public class BasePage {
 
 	public void clicarPorTexto(String texto) {
 		clicar(By.xpath("//*[@text='" + texto + "']"));
-		// getDriver().findElement(By.xpath("//*[@text='"+texto+"']")).click();
 	}
 	
 	public void clicarSeekBar(double posicao) {
+		@SuppressWarnings("unused")
 		MobileElement seek = getDriver().findElement(MobileBy.AccessibilityId("slid"));
 	}
 
@@ -93,6 +105,55 @@ public class BasePage {
         .moveTo(PointOption.point(x, end_y))
         .release()
         .perform();
-			
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public void swipe(double inicio, double fim) {
+		Dimension size = getDriver().manage().window().getSize();
+		
+		int y = size.height / 2;
+		
+		int start_x = (int) (size.width * inicio);
+		int end_x = (int) (size.width * fim);
+		
+		new TouchAction(getDriver())
+        .longPress(PointOption.point(start_x, y))
+        .moveTo(PointOption.point(end_x, y))
+        .release()
+        .perform();
+		
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public void swipeList(String texto, double inicio, double fim) {
+		Dimension size = getDriver().manage().window().getSize();
+		List<MobileElement> elementos = getDriver().findElements(By.xpath("//*[@text='" + texto + "']"));
+		
+		if (elementos.size() > 0) {
+			clicarPorTexto(texto);
+			int y = size.height / 8;
+			int start_x = (int) (size.width * inicio);
+			int end_x = (int) (size.width * fim);
+			new TouchAction(getDriver())
+				.longPress(PointOption.point(start_x, y))
+				.moveTo(PointOption.point(end_x, y))
+				.release().perform();
+		} else {
+			Assert.fail("Não existe a opção com o texto : " + texto);
+		}
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public void swipeElement(MobileElement element, double inicio, double fim) {
+
+		int y = element.getLocation().y + (element.getSize().height / 2);
+
+		int start_x = (int) (element.getSize().width * inicio);
+		int end_x = (int) (element.getSize().width * fim);
+		
+		new TouchAction(getDriver())
+			.longPress(PointOption.point(start_x, y))
+			.moveTo(PointOption.point(end_x, y))
+			.release().perform();
 	}
 }	
