@@ -2,11 +2,9 @@ package br.ce.wcaquino.appium.test;
 
 import org.junit.Assert;
 import org.junit.Test;
-
 import br.ce.wcaquino.appium.core.BaseTest;
 import br.ce.wcaquino.appium.page.MenuPage;
 import br.ce.wcaquino.appium.page.SwipeListPase;
-
 
 public class SwipeTest extends BaseTest {
 	
@@ -39,9 +37,7 @@ public class SwipeTest extends BaseTest {
 		
 		//clicar na opcao +
 		swipePage.clicarBotaoMais();
-		//menu.clicarPorTexto("(+)");
 		
-		/*
 		//verificar opc+
 		Assert.assertTrue(menu.existeElementoPorTexto("Opção 1 (+)"));
 		
@@ -55,11 +51,9 @@ public class SwipeTest extends BaseTest {
 		Assert.assertTrue(menu.existeElementoPorTexto("Opção 4 (-)"));
 		
 		//opc5 esquerta
-		swipePage.swipeListRight("Opção 5");
+		swipePage.swipeListLeft("Opção 5 (-)");
 		
 		//verificar opc5
 		Assert.assertTrue(menu.existeElementoPorTexto("Opção 5"));
-		*/
 	}
-
 }
