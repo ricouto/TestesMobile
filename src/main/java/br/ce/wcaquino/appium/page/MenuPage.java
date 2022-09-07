@@ -43,4 +43,8 @@ public class MenuPage extends BasePage {
 	public void acessarSeuBHibrido() {
 		clicarPorTexto("SeuBarriga Híbrido");
 	}
+	
+	public void acessarSeuBNativo() {
+		clicarPorTexto("SeuBarriga Nativo");
+	}
 }
