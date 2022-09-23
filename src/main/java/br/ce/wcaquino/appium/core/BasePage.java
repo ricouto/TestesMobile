@@ -13,6 +13,8 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidTouchAction;
+import io.appium.java_client.touch.LongPressOptions;
+import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
 
 public class BasePage {
@@ -155,5 +157,12 @@ public class BasePage {
 			.longPress(PointOption.point(start_x, y))
 			.moveTo(PointOption.point(end_x, y))
 			.release().perform();
+	}
+	
+	public void cliqueLongo(By by) {
+		AndroidTouchAction touch = new AndroidTouchAction(DriverFactory.getDriver());
+        touch.longPress(LongPressOptions.longPressOptions()
+        		.withElement(ElementOption.element(DriverFactory.getDriver().findElement(by))))
+        		.perform();
 	}
 }	
