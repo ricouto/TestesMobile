@@ -79,9 +79,9 @@ public class SBTest extends BaseTest {
 	@Test
 	public void deveAtualizarSaldoAoExcluirMovimentacao() throws InterruptedException {
 		
-		home.obterSaldoConta("Conta para saldo");
+		//home.obterSaldoConta("Conta para saldo");
 		//Assert.assertEquals("534.00", home.obterSaldoConta("Conta para saldo"));
-		menuSB.clicarHome();
+		menuSB.clicarResumo();
 		resumo.excluirMovimentacao("Movimentacao 3, calculo saldo");
 		Assert.assertTrue(resumo.existeElementoPorTexto("Movimentação removida com sucesso!"));
 		menuSB.clicarHome();

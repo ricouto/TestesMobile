@@ -11,7 +11,8 @@ public class SBHomePage extends BasePage {
 		System.out.println("passei - - " + conta);
 		
 		Thread.sleep(5000);
-		System.out.println("passei - - " + obterTexto(By.xpath("//android.view.ViewGroup//android.widget.TextView/*[contains(text(),'"+conta+"')]/following-sibling::android.widget.TextView")));
+		System.out.println("passei - - " + obterTexto(By.xpath("//android.view.ViewGroup//android.widget.TextView/*[contains(text(),'"+conta+"')]"
+				+ "/following-sibling::android.widget.TextView")));
 		
 		//System.out.println(obterTexto(By.className("//android.view.ViewGroup")("//*[contains(text(),'"+conta+"')]")));
 		//return obterTexto(By.xpath("//*[contains(text(),'"+conta+"')]/following-sibling::android.widget.TextView"));
