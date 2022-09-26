@@ -8,8 +8,8 @@ Repo que contém material sobre o curso de Testes Mobile (Java e Appium) realiza
 <p> [:heavy_check_mark:] CalculadoraTest.java </p>
 <p> [:heavy_check_mark:] DesafioCadastroAula18.java </p>
 <p> [:heavy_check_mark:] ElementosCTAppiumTesteAjustado.java </p>
-
-<p> [:construction:] Colocarei mais detalhes ao longo do curso \0/  </p>
+<p> [:heavy_check_mark:] Execução no SauceLabs </p>
+<p> [:heavy_check_mark:] Além de muito conteúdo sobre automação Mobile 0/ </p>
 
 ## <code><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f393.png" width="20"></code><code><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4da.png" width="20"></code> Cursos
 

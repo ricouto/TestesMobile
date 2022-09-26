@@ -6,6 +6,9 @@ import br.ce.wcaquino.appium.core.BasePage;
 
 public class SBHomePage extends BasePage {
 	
+	public void clicarReset() {
+		clicarPorTexto("RESET");
+	}
 	
 	public void obterSaldoConta(String conta) throws InterruptedException {
 		System.out.println("passei - - " + conta);

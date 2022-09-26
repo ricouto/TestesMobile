@@ -24,11 +24,13 @@ public class SBTest extends BaseTest {
 	private SBResumoPage resumo = new SBResumoPage();
 
 	@Before
-	public void setup() {
+	public void setup() throws InterruptedException {
 		menu.acessarSeuBNativo();
 		login.setEmail("testeappium@uol.com");
 		login.setSenha("1");
 		login.entrar();
+		Thread.sleep(1000);
+		home.clicarReset();
 	}
 	
 	@Test
